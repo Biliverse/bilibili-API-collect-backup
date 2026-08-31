@@ -384,6 +384,30 @@ message CombinationEp {
 // 
 message Covenanter {}
 
+//
+message SpecialTag {
+    //
+    //repeated SpecialCell special_cell = 1;
+    //
+    bool refresh = 2;
+}
+
+//
+message UpDataModule {
+    //
+    //repeated ExtTab ext_tabs = 1;
+    //
+    int32 idx = 2;
+    //
+    string protocol_url = 3;
+}
+
+//
+message ProfessionApproval {
+    //
+    string title = 1;
+}
+
 // 
 message DeliveryData {
     // 
@@ -769,6 +793,12 @@ message Module {
         AttentionRecommend attention_recommend = 26;
         // 
         Covenanter covenanter = 27;
+        //
+        SpecialTag special_tag = 28;
+        //
+        UpDataModule up_data_module = 29;
+        //
+        ProfessionApproval profession_approval = 30;
     }
 }
 
@@ -847,6 +877,14 @@ enum ModuleType {
     ATTENTION_RECOMMEND = 35;
     // 
     COVENANTER = 36;
+    //
+    SPECIALTAG = 37;
+    //
+    UPDATA = 38;
+    //
+    PROFESSION_APPROVAL = 39;
+    //
+    MERCHANDISE = 55;
 }
 
 // 

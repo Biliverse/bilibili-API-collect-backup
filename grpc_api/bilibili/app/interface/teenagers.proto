@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+// 模式状态响应
+message ModeStatusReply {
+    repeated Mode modes = 1;
+}
+
+// 模式信息
+message Mode {
+    string name = 2;
+    F5 f5 = 5;
+}
+
+// 模式扩展字段
+message F5 {
+    int32 f1 = 1;
+}

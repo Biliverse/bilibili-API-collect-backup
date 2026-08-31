@@ -198,6 +198,22 @@ message CM {
     google.protobuf.Any ads_control = 2;
     // 
     repeated google.protobuf.Any source_content = 3;
+    //
+    Info5 content5 = 5;
+
+    message Info5 {
+        Info51 content1 = 1;
+    }
+
+    message Info51 {
+        Info512 content2 = 2;
+    }
+
+    message Info512 {
+        Info5129 content9 = 9;
+    }
+
+    message Info5129 {}
 }
 
 // 
@@ -688,6 +704,8 @@ message Tab {
     string tab_bg = 2;
     // 
     TabControl danmaku_entrance = 3;
+    //
+    string tab_bg_pad = 4;
 }
 
 // 评论区/弹幕 Tab 控制
@@ -724,6 +742,8 @@ enum TabType {
     TAB_REPLY = 2;
     // OGV 活动信息 Tab
     TAB_OGV_ACTIVITY = 3;
+    // 目录标签
+    TAB_CATALOG = 4;
 }
 
 // 
@@ -866,30 +886,30 @@ message ViewReply {
 
 // 
 message ViewReq {
-    // 
-    uint64 aid = 1;
-    // 
-    string bvid = 2;
+    //
+    optional uint64 aid = 1;
+    //
+    optional string bvid = 2;
     // 
     string from = 3;
     // 
     string spmid = 4;
     // 
-    string from_spmid = 5;
+    optional string from_spmid = 5;
     // 
     string session_id = 6;
     // 
     bilibili.app.archive.middleware.v1.PlayerArgs player_args = 7;
     // 
-    string track_id = 8;
+    optional string track_id = 8;
     // 
     map<string, string> extra_content = 9;
     // 
-    string play_mode = 10;
+    optional string play_mode = 10;
     // 
     Relate relate = 11;
     // 
-    string biz_extra = 12;
+    optional string biz_extra = 12;
     // 
     string ad_extra = 13;
     // 

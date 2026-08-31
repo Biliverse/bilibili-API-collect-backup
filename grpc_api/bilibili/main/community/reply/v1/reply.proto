@@ -334,6 +334,25 @@ message MainListReply {
     QoeInfo qoe = 15;
     //
     map<string, int32> callbacks = 16;
+    // 评论区顶部卡片
+    repeated SubjectTopCard subject_top_cards = 28;
+}
+
+// 评论区顶部卡片
+message SubjectTopCard {
+    Type type = 1;
+}
+
+// 评论区顶部卡片类型
+enum Type {
+    UNKNOWN = 0;
+    OGV_GRADE = 1;
+    UP_PROTECTION = 2;
+    CM_TYPE = 3;
+    UP_SELECTION = 4;
+    OPERATION = 5;
+    VOTE = 6;
+    ESPORTS_GRADE = 7;
 }
 
 // 主评论列表-请求
