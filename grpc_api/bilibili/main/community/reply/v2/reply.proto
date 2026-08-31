@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package bilibili.main.community.reply.v2;
+
+// 评论编辑器图标状态
+enum EditorIconState {
+    EDITOR_ICON_STATE_DEFAULT = 0;
+    EDITOR_ICON_STATE_ENABLE = 1;
+    EDITOR_ICON_STATE_DISABLE = 2;
+    EDITOR_ICON_STATE_HIDE = 3;
+}
+
+// 评论编辑器功能按钮类型
+enum FunctionButtonType {
+    FUNCTION_BUTTON_TYPE_DEFAULT = 0;
+    FUNCTION_BUTTON_TYPE_SCREENSHOT = 1;
+    FUNCTION_BUTTON_TYPE_UPLOAD_PICTURE = 2;
+    FUNCTION_BUTTON_TYPE_VOTE = 3;
+    FUNCTION_BUTTON_TYPE_NOTE = 4;
+    FUNCTION_BUTTON_TYPE_GOODS = 5;
+    FUNCTION_BUTTON_TYPE_INSERT_CONTENT = 6;
+    FUNCTION_BUTTON_TYPE_ELEC = 7;
+    FUNCTION_BUTTON_TYPE_CM_BIZ_HELPER = 8;
+}
+
+// 评论编辑器信息-响应
+message SubjectDescriptionReply {
+    SubjectDescriptionInputConfig input = 2;
+}
+
+// 评论编辑器输入配置
+message SubjectDescriptionInputConfig {
+    FunctionButtonGroup func_buttons = 7;
+}
+
+// 评论编辑器功能按钮组
+message FunctionButtonGroup {
+    repeated FunctionButton buttons = 1;
+}
+
+// 评论编辑器功能按钮
+message FunctionButton {
+    FunctionButtonType type = 1;
+    string name = 2;
+    EditorIconState state = 3;
+    string link = 4;
+}

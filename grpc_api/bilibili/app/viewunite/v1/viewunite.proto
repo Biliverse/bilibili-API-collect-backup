@@ -251,7 +251,7 @@ message ContractCard {
     // 
     UpperInfos upper = 6;
     // 
-    int32 is_follow_display = 7;
+    bool is_follow_display = 7;
     // 卡片的文字说明信息
     ContractText text = 8;
     // 
@@ -781,7 +781,7 @@ message VideoShot {
     // 
     int32 img_x_len = 2;
     // 
-    int32 imd_x_size = 3;
+    int32 img_x_size = 3;
     // 
     int32 img_y_len = 4;
     // 
