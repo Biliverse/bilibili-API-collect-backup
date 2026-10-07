@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package bilibili.app.viewunite.v1;
+
+import "bilibili/app/viewunite/common.proto";
+import "bilibili/app/viewunite/v1/viewunite.proto";
+
+// 外层三个字段来自 ADBlock 提交 950fee1，用户于 2026-10-07 接受回迁；尚无独立完整响应或抓包依据。
+// The three envelope fields originate from ADBlock commit 950fee1 and were accepted on 2026-10-07; no independent complete response or capture is available.
+// 仅登记响应消息并复用已有子结构，不推断 AIRelateAsync 的请求或服务定义。
+// Record only response messages using existing substructures without inferring an AIRelateAsync request or service definition.
+
+// 异步推荐响应的模块容器。
+// Module container for the asynchronous recommendation response.
+message AIRelateTab {
+    repeated bilibili.app.viewunite.common.Module modules = 1;
+}
+
+// 异步推荐响应。
+// Asynchronous recommendation response.
+message AIRelateReply {
+    CM cm = 1;
+    AIRelateTab tab = 2;
+}
